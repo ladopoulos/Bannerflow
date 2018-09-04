@@ -1,0 +1,16 @@
+<form (ngSubmit)="onSubmit(bannerFrm)" [formGroup]="bannerFrm">
+  <h2>{{data.modalTitle}}</h2>
+
+  <div>
+    <mat-form-field appearance="outline">      
+      <textarea matInput placeholder="Banner html markup" formControlName="html"></textarea>
+      <mat-error *ngIf="formErrors.html ">
+        {{ formErrors.html }}
+      </mat-error>
+    </mat-form-field>
+  </div> 
+  <div>
+    <button type="button" mat-raised-button color="warn" (click)="dialogRef.close()">Cancel</button>
+    <button type="submit" mat-raised-button color="primary" [disabled]="bannerFrm.invalid">{{data.modalBtnTitle}}</button>
+  </div>
+</form>  
